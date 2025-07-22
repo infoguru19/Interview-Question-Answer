@@ -1,4 +1,5 @@
-## How to create multiple storage account through terraform but i will pass storage account names from variable.tf ?
+## How to create `multiple storage account` through terraform and also i will pass storage account names from variable.tf or terraform.tfvars ?
+- We have to pass input variable as list, `default     = ["stacct01demo", "stacct02demo", "stacct03demo"]`  # you can override this via tfvars
 **variable.tf**
 ```
 variable "storage_account_names" {
@@ -42,9 +43,11 @@ resource "azurerm_storage_account" "this" {
 ```
 
 **terraform.tfvars**
+```
 resource_group_name      = "rg-demo"
 location                 = "eastus"
 storage_account_names    = ["stacteast01", "stacteast02"]
+```
 
 
 
