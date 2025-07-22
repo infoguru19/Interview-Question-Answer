@@ -1,0 +1,28 @@
+name: Read
+on:
+  push:
+    branches: 
+      - master
+      - main
+jobs:
+  terraform:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+      - name: Read Terraform.md
+        run: cat TERRAFORM.md
+  python:
+    runs-on: ubuntu-latest
+    needs: terraform
+    
+    steps:
+    - name: Checkout-Repository
+      uses: actions/checkout@v4
+    - name: Read Python
+      run: cat PYTHON.md
+      
+
+    
+  
+  
