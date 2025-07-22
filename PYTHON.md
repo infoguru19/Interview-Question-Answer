@@ -21,7 +21,7 @@ def get_public_storage_accounts():
     subscriptions = list(sub_client.subscriptions.list())
 
     for sub in subscriptions:
-        print(f"\n🔎 Subscription: {sub.display_name} ({sub.subscription_id})")
+        print(f"\n Subscription: {sub.display_name} ({sub.subscription_id})")
         storage_client = StorageManagementClient(credential, sub.subscription_id)
 
         # List all storage accounts in the subscription
@@ -33,7 +33,7 @@ def get_public_storage_accounts():
 
             # Check if public access is allowed
             if account_details.network_rule_set and account_details.network_rule_set.default_action == "Allow":
-                print(f"✅ Public Storage Account: {account.name}")
+                print(f" Public Storage Account: {account.name}")
                 print(f"   Location: {account.location}")
                 print(f"   Resource Group: {account.id.split('/')[4]}")
                 print(f"   Kind: {account.kind}")
