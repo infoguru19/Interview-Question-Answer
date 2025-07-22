@@ -1,12 +1,12 @@
 ### Write python script to fetch all public storage account from azure.
    Here's a Python script that uses the Azure SDK `(azure-mgmt-storage)` to fetch all public Azure Storage Accounts (i.e., storage accounts with public network access enabled) across your Azure subscription(s).
    
-   ***Requirements***
+   **Requirements**
  - Azure CLI authenticated (az login)
  - azure-identity, azure-mgmt-storage libraries installed:
  - `pip install azure-identity azure-mgmt-storage`
    
-***fetch_public_storage_accounts.py***
+**fetch_public_storage_accounts.py**
 ```
 from azure.identity import AzureCliCredential
 from azure.mgmt.storage import StorageManagementClient
